@@ -1,0 +1,16 @@
+﻿@model IEnumerable<string>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="col-md-3">
+        <h2>Influencer List</h2>
+        <ul>
+        @foreach (var s in Model)
+        {
+            <li>@s</li>
+        }
+        </ul>
+    </div>
+</div>

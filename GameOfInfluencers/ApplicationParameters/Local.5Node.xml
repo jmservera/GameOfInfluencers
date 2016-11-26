@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="fabric:/GameOfInfluencers" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+  <Parameters>
+    <Parameter Name="Front_InstanceCount" Value="1" />
+    <Parameter Name="Data_InstanceCount" Value="1" />
+    <Parameter Name="PersistenceService_InstanceCount" Value="3" />
+    <Parameter Name="PersistenceService_PartitionCount" Value="5" />
+    <Parameter Name="TwitterReader_PartitionCount" Value="1" />
+    <Parameter Name="TwitterReader_MinReplicaSetSize" Value="2" />
+    <Parameter Name="TwitterReader_TargetReplicaSetSize" Value="3" />
+    <Parameter Name="TwitterReader_ApiKey" Value="jUfg54pbTHQevd12C66wsNwZt" />
+    <Parameter Name="TwitterReader_ApiSecret" Value="SLli70eO6R600szEEvBdj1akBiashSdj6A4by0dhJN6oJhp9B5" />
+    <Parameter Name="TwitterReader_TokenKey" Value="54835129-c4Jjtb5nQdEVCDwaBi55oNbWhcXTlGcJFOeKGoCA1" />
+    <Parameter Name="TwitterReader_TokenSecret" Value="tL3yEXSkGMZaa1w8Bn0pARkQoLURpDPY2Vvj1xiyO5hCG" />
+    <Parameter Name="DB_ConnectionString" Value="Data Source=(localdb)\.\goflocal;Initial Catalog=GoFLocal;Integrated Security=SSPI;" />
+    <Parameter Name="GofData_Storage" Value="UseDevelopmentStorage=true" />
+  </Parameters>
+</Application>

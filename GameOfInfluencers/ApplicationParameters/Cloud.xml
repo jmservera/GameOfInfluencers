@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="fabric:/GameOfInfluencers" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+  <Parameters>
+    <Parameter Name="Front_InstanceCount" Value="-1" />
+    <Parameter Name="Data_InstanceCount" Value="-1" />
+    <Parameter Name="PersistenceService_InstanceCount" Value="-1" />
+    <Parameter Name="PersistenceService_PartitionCount" Value="5" />
+    <Parameter Name="TwitterReader_PartitionCount" Value="1" />
+    <Parameter Name="TwitterReader_MinReplicaSetSize" Value="2" />
+    <Parameter Name="TwitterReader_TargetReplicaSetSize" Value="3" />
+    <Parameter Name="TwitterReader_ApiKey" Value="9FuTYFRAtT4UttZFxqkvlR6r6" />
+    <Parameter Name="TwitterReader_ApiSecret" Value="0vSzeQtzZ2byxctLI4aB9xoGPqmMs66T9SqI9DS4BMoylk14Uy" />
+    <Parameter Name="TwitterReader_TokenKey" Value="54835129-YEc9mnV24vIXti28sKrIRr7GZEu7JqjWQB5l5eVT1" />
+    <Parameter Name="TwitterReader_TokenSecret" Value="9rnVwXi2Xub6Dz1qk2acBf2Gxc5G0214A52TSKpjqljUh" />
+    <Parameter Name="DB_ConnectionString" Value="Server=tcp:gof.database.windows.net,1433;Initial Catalog=GameOfInfluencers;Persist Security Info=False;User ID=GameOfInfluencers;Password=Hackathon2016;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" />
+    <Parameter Name="GofData_Storage" Value="DefaultEndpointsProtocol=https;AccountName=gofdata;AccountKey=u1IVd8VodDSor0blhlUUeToJzvaUbjzu2vF13U0U9bV7xiT0FqZ3fuLeK4bCnqEYySMqv9R8oR0bCgUt9cp9Lw==" />
+  </Parameters>
+</Application>

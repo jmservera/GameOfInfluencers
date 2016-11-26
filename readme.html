@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1>How to run the local app</h1>
+    You will need:
+    <ul>
+        <li>Azure Storage Emulator 4.4 or greater.<a href="https://azure.microsoft.com/en-us/downloads/">Download Here</a></li>
+        <li>
+            Run Storage Emulator with:
+            <pre>C:\Program Files (x86)\Microsoft SDKs\Azure\Storage Emulator>AzureStorageEmulator.exe start</pre>
+        </li>
+        <li>Share Sql Server LocalDB instance:
+            <pre>sqllocaldb share mssqllocaldb goflocal</pre>
+        </li>
+        <li>Add [NETWORK SERVICE] user as dbo to the localdb instance and db in the logins folder (from SSMS)</li>
+    </ul>
+</body>
+</html>

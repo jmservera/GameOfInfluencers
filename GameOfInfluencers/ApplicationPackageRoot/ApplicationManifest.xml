@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="GameOfInfluencersType" ApplicationTypeVersion="1.7.20" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+  <Parameters>
+    <Parameter Name="Front_InstanceCount" DefaultValue="-1" />
+    <Parameter Name="Data_InstanceCount" DefaultValue="-1" />
+    <Parameter Name="PersistenceService_InstanceCount" DefaultValue="-1" />
+    <Parameter Name="PersistenceService_PartitionCount" DefaultValue="5" />
+    <Parameter Name="TwitterReader_MinReplicaSetSize" DefaultValue="2" />
+    <Parameter Name="TwitterReader_PartitionCount" DefaultValue="1" />
+    <Parameter Name="TwitterReader_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="TwitterReader_ApiKey" DefaultValue="" />
+    <Parameter Name="TwitterReader_ApiSecret" DefaultValue="" />
+    <Parameter Name="TwitterReader_TokenKey" DefaultValue="" />
+    <Parameter Name="TwitterReader_TokenSecret" DefaultValue="" />
+    <Parameter Name="DB_ConnectionString" DefaultValue="" />
+    <Parameter Name="GofData_Storage" DefaultValue="" />
+  </Parameters>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="Gof.FrontPkg" ServiceManifestVersion="1.0.4" />
+    <ConfigOverrides />
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="Gof.DataPkg" ServiceManifestVersion="1.0.4" />
+    <ConfigOverrides />
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="Gof.PersistenceServicePkg" ServiceManifestVersion="1.5.2" />
+    <ConfigOverrides>
+      <ConfigOverride Name="Config">
+        <Settings>
+          <Section Name="Data">
+            <Parameter Name="ConnectionString" Value="[DB_ConnectionString]" />
+            <Parameter Name="StorageConnectionString" Value="[GofData_Storage]" />
+          </Section>
+        </Settings>
+      </ConfigOverride>
+    </ConfigOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="Gof.TwitterReaderPkg" ServiceManifestVersion="1.6.13" />
+    <ConfigOverrides>
+      <ConfigOverride Name="Config">
+        <Settings>
+          <Section Name="Keys">
+            <Parameter Name="ApiKey" Value="[TwitterReader_ApiKey]" />
+            <Parameter Name="ApiSecret" Value="[TwitterReader_ApiSecret]" />
+            <Parameter Name="TokenKey" Value="[TwitterReader_TokenKey]" />
+            <Parameter Name="TokenSecret" Value="[TwitterReader_TokenSecret]" />
+          </Section>
+        </Settings>
+      </ConfigOverride>
+    </ConfigOverrides>
+  </ServiceManifestImport>
+  <DefaultServices>
+    <Service Name="Front">
+      <StatelessService ServiceTypeName="FrontType" InstanceCount="[Front_InstanceCount]">
+        <SingletonPartition />
+      </StatelessService>
+    </Service>
+    <Service Name="Data">
+      <StatelessService ServiceTypeName="DataType" InstanceCount="[Data_InstanceCount]">
+        <UniformInt64Partition PartitionCount="1" LowKey="0" HighKey="1" />
+      </StatelessService>
+    </Service>
+    <Service Name="PersistenceService">
+      <StatelessService ServiceTypeName="PersistenceServiceType" InstanceCount="[PersistenceService_InstanceCount]">
+        <UniformInt64Partition PartitionCount="[PersistenceService_PartitionCount]" LowKey="-2147483648" HighKey="2147483647" />
+      </StatelessService>
+    </Service>
+    <Service Name="TwitterReader">
+      <StatefulService ServiceTypeName="TwitterReaderType" TargetReplicaSetSize="[TwitterReader_TargetReplicaSetSize]" MinReplicaSetSize="[TwitterReader_MinReplicaSetSize]">
+        <SingletonPartition />
+      </StatefulService>
+    </Service>
+  </DefaultServices>
+</ApplicationManifest>
