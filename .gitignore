@@ -244,3 +244,6 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/GameOfInfluencers/ApplicationParameters/Cloud_real.xml
+/GameOfInfluencers/ApplicationParameters/Local.1Node_real.xml
+/GameOfInfluencers/ApplicationParameters/Local.5Node_real.xml

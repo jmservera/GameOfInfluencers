@@ -8,11 +8,11 @@
     <Parameter Name="TwitterReader_PartitionCount" Value="1" />
     <Parameter Name="TwitterReader_MinReplicaSetSize" Value="2" />
     <Parameter Name="TwitterReader_TargetReplicaSetSize" Value="3" />
-    <Parameter Name="TwitterReader_ApiKey" Value="9FuTYFRAtT4UttZFxqkvlR6r6" />
-    <Parameter Name="TwitterReader_ApiSecret" Value="0vSzeQtzZ2byxctLI4aB9xoGPqmMs66T9SqI9DS4BMoylk14Uy" />
-    <Parameter Name="TwitterReader_TokenKey" Value="54835129-YEc9mnV24vIXti28sKrIRr7GZEu7JqjWQB5l5eVT1" />
-    <Parameter Name="TwitterReader_TokenSecret" Value="9rnVwXi2Xub6Dz1qk2acBf2Gxc5G0214A52TSKpjqljUh" />
-    <Parameter Name="DB_ConnectionString" Value="Server=tcp:gof.database.windows.net,1433;Initial Catalog=GameOfInfluencers;Persist Security Info=False;User ID=GameOfInfluencers;Password=Hackathon2016;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" />
-    <Parameter Name="GofData_Storage" Value="DefaultEndpointsProtocol=https;AccountName=gofdata;AccountKey=u1IVd8VodDSor0blhlUUeToJzvaUbjzu2vF13U0U9bV7xiT0FqZ3fuLeK4bCnqEYySMqv9R8oR0bCgUt9cp9Lw==" />
+    <Parameter Name="TwitterReader_ApiKey" Value="[YOURAPIKEY]" />
+    <Parameter Name="TwitterReader_ApiSecret" Value="[YOURAPISECRET]" />
+    <Parameter Name="TwitterReader_TokenKey" Value="[YOURTOKENKEY]" />
+    <Parameter Name="TwitterReader_TokenSecret" Value="[YOURTOKENSECRET]" />
+    <Parameter Name="DB_ConnectionString" Value="[YOURDBCONN]" />
+    <Parameter Name="GofData_Storage" Value="[YOURSTORAGECONN]" />
   </Parameters>
 </Application>

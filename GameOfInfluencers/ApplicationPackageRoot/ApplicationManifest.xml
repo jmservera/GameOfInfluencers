@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="GameOfInfluencersType" ApplicationTypeVersion="1.7.20" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+<ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="GameOfInfluencersType" ApplicationTypeVersion="1.7.21" xmlns="http://schemas.microsoft.com/2011/01/fabric">
   <Parameters>
     <Parameter Name="Front_InstanceCount" DefaultValue="-1" />
     <Parameter Name="Data_InstanceCount" DefaultValue="-1" />
@@ -16,15 +16,15 @@
     <Parameter Name="GofData_Storage" DefaultValue="" />
   </Parameters>
   <ServiceManifestImport>
-    <ServiceManifestRef ServiceManifestName="Gof.FrontPkg" ServiceManifestVersion="1.0.4" />
+    <ServiceManifestRef ServiceManifestName="Gof.FrontPkg" ServiceManifestVersion="1.0.5" />
     <ConfigOverrides />
   </ServiceManifestImport>
   <ServiceManifestImport>
-    <ServiceManifestRef ServiceManifestName="Gof.DataPkg" ServiceManifestVersion="1.0.4" />
+    <ServiceManifestRef ServiceManifestName="Gof.DataPkg" ServiceManifestVersion="1.0.5" />
     <ConfigOverrides />
   </ServiceManifestImport>
   <ServiceManifestImport>
-    <ServiceManifestRef ServiceManifestName="Gof.PersistenceServicePkg" ServiceManifestVersion="1.5.2" />
+    <ServiceManifestRef ServiceManifestName="Gof.PersistenceServicePkg" ServiceManifestVersion="1.5.3" />
     <ConfigOverrides>
       <ConfigOverride Name="Config">
         <Settings>
@@ -37,7 +37,7 @@
     </ConfigOverrides>
   </ServiceManifestImport>
   <ServiceManifestImport>
-    <ServiceManifestRef ServiceManifestName="Gof.TwitterReaderPkg" ServiceManifestVersion="1.6.13" />
+    <ServiceManifestRef ServiceManifestName="Gof.TwitterReaderPkg" ServiceManifestVersion="1.6.14" />
     <ConfigOverrides>
       <ConfigOverride Name="Config">
         <Settings>

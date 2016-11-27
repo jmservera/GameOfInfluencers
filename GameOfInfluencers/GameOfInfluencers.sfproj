@@ -40,6 +40,9 @@
     <ProjectReference Include="..\Gof.TwitterReader\Gof.TwitterReader.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ApplicationParameters\Cloud_real.xml" />
+    <Content Include="ApplicationParameters\Local.5Node_real.xml" />
+    <Content Include="ApplicationParameters\Local.1Node_real.xml" />
     <Content Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
