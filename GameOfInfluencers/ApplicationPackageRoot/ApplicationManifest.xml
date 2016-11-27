@@ -59,7 +59,7 @@
     </Service>
     <Service Name="Data">
       <StatelessService ServiceTypeName="DataType" InstanceCount="[Data_InstanceCount]">
-        <UniformInt64Partition PartitionCount="1" LowKey="0" HighKey="1" />
+        <SingletonPartition />
       </StatelessService>
     </Service>
     <Service Name="PersistenceService">
