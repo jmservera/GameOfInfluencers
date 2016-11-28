@@ -35,6 +35,7 @@ will need:
     ```sql
     create login [nt authority\network service] FROM windows with DEFAULT_DATABASE=goflocal;use goflocal;exec sp_addrolemember 'db_owner', 'nt authority\network service';
     ```
+
 ## Needed settings
 
 Besides the basic configuration, you will also need to define some keys.
