@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="GameOfInfluencersType" ApplicationTypeVersion="1.7.21" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+<ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="GameOfInfluencersType" ApplicationTypeVersion="1.7.22" xmlns="http://schemas.microsoft.com/2011/01/fabric">
   <Parameters>
     <Parameter Name="Front_InstanceCount" DefaultValue="-1" />
     <Parameter Name="Data_InstanceCount" DefaultValue="-1" />
@@ -24,7 +24,7 @@
     <ConfigOverrides />
   </ServiceManifestImport>
   <ServiceManifestImport>
-    <ServiceManifestRef ServiceManifestName="Gof.PersistenceServicePkg" ServiceManifestVersion="1.5.3" />
+    <ServiceManifestRef ServiceManifestName="Gof.PersistenceServicePkg" ServiceManifestVersion="1.5.4" />
     <ConfigOverrides>
       <ConfigOverride Name="Config">
         <Settings>
