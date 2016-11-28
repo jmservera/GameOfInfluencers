@@ -4,7 +4,14 @@
 ## How to run the local app
 
 This Service Fabric project is prepared to run locally, you don't need to install anything in Azure to
-test this project, it will work with just the emulators. In order to use it with the local emulators you 
+test this project, it will work with just the emulators.
+
+### The easy way
+
+You will find a [initservices.bat](initservices.bat) file that does the initialisation work for you, just execute it under *admin* privileges.
+
+### How does the .bat work
+In order to use it with the local emulators you 
 will need:
 
 1. Azure Storage Emulator 4.4 or greater. [Download it here](https://azure.microsoft.com/en-us/downloads/)
@@ -28,7 +35,9 @@ will need:
     ```sql
     create login [nt authority\network service] FROM windows with DEFAULT_DATABASE=goflocal;use goflocal;exec sp_addrolemember 'db_owner', 'nt authority\network service';
     ```
- 
-## The easy way
+## Needed settings
 
-You will find a [initservices.bat](initservices.bat) file that does the initialisation work for you, just execute it under *admin* privileges.
+Besides the basic configuration, you will also need to define some keys.
+
+* Twitter API: just set the needed values in one of the ApplicationParameters *.xml* file, remember to point the corresponding *PublishProfiles* file.
+* Cloud services: you will need to change the database and storage connection string.
