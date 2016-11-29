@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/javascripts/modernizr-2.6.2.js"></script>
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/stylesheets/style.css" rel="stylesheet" />
+    <script src="/javascripts/jquery-1.10.2.min.js"></script>
+    <script>
+        var socket = io();
+        socket.on('Message', function (msg) {
+            console.log("message: " + msg);
+            $('#messages').append($('<li>').text(msg));
+        });
+    </script>
+</head>
+<body>
+    <h1>Test</h1>
+    <ul id="messages"></ul>
+</body>
+</html>
