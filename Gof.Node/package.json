@@ -1,0 +1,17 @@
+{
+  "name": "gof-node",
+  "version": "0.1.0",
+  "description": "A simple web app",
+  "main": "app.js",
+  "author": {
+    "name": "Juan Manuel Servera"
+  },
+  "dependencies": {
+    "azure-servicefabric": "latest"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmservera/GameOfInfluencers.git"
+  }
+}

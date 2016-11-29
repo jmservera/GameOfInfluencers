@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="GameOfInfluencersType" ApplicationTypeVersion="1.7.23" xmlns="http://schemas.microsoft.com/2011/01/fabric">
   <Parameters>
+    <Parameter Name="Gof.NodeApi_InstanceCount" DefaultValue="-1" />
     <Parameter Name="Front_InstanceCount" DefaultValue="-1" />
     <Parameter Name="Data_InstanceCount" DefaultValue="-1" />
     <Parameter Name="PersistenceService_InstanceCount" DefaultValue="-1" />
@@ -15,6 +16,10 @@
     <Parameter Name="DB_ConnectionString" DefaultValue="" />
     <Parameter Name="GofData_Storage" DefaultValue="" />
   </Parameters>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="Gof.NodeApiPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+  </ServiceManifestImport>
   <ServiceManifestImport>
     <ServiceManifestRef ServiceManifestName="Gof.FrontPkg" ServiceManifestVersion="1.0.5" />
     <ConfigOverrides />
@@ -52,6 +57,11 @@
     </ConfigOverrides>
   </ServiceManifestImport>
   <DefaultServices>
+    <Service Name="Gof.NodeApi">
+      <StatelessService ServiceTypeName="Gof.NodeApiType" InstanceCount="[Gof.NodeApi_InstanceCount]">
+        <SingletonPartition />
+      </StatelessService>
+    </Service>
     <Service Name="Front">
       <StatelessService ServiceTypeName="FrontType" InstanceCount="[Front_InstanceCount]">
         <SingletonPartition />

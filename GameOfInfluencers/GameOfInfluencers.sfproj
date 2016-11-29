@@ -40,6 +40,11 @@
     <ProjectReference Include="..\Gof.TwitterReader\Gof.TwitterReader.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\Gof.Node\**\*.*">
+      <Link>ApplicationPackageRoot\Gof.NodeApiPkg\Code\%(RecursiveDir)%(Filename)%(Extension)</Link>
+    </Content>
+    <Content Include="ApplicationPackageRoot\Gof.NodeApiPkg\Config\Settings.xml" />
+    <Content Include="ApplicationPackageRoot\Gof.NodeApiPkg\ServiceManifest.xml" />
     <Content Include="ApplicationParameters\Cloud_real.xml" />
     <Content Include="ApplicationParameters\Local.5Node_real.xml" />
     <Content Include="ApplicationParameters\Local.1Node_real.xml" />
