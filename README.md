@@ -11,8 +11,7 @@ test this project, it will work with just the emulators.
 You will find a [initservices.bat](initservices.bat) file that does the initialisation work for you, just execute it under *admin* privileges.
 
 ### How does the .bat work
-In order to use it with the local emulators you 
-will need:
+In order to use it with the local emulators you will need:
 
 1. Azure Storage Emulator 4.4 or greater. [Download it here](https://azure.microsoft.com/en-us/downloads/)
 
